@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 40px 20px;
+}
+
+#card1{
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 16px;
+    width: 280px;
+    margin: 40px auto;
+
+    /* Configurando animação para card */
+    animation-name: andarLado, pulsar, girar ;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+    
+    /* sintaxe simplificada */
+    animation: girar 3s ease-in-out infinite;
+}
+
+#card1 :hover{
+    animation: girar 3s ease-in-out infinite;
+}
+
+#card2{  
+    padding: 16px;
+    margin: 40px auto;
+
+    animation: aparecer 2s ease-in-out;
+
+}
+/* #card2 :hover{
+    animation: fadeIn 1.5s ease-out forwards;
+
+} */
+
+
+#card3 {
+    width: 23ch;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #2563eb;
+    font-family: monospace;
+    animation: digitar 3s steps(23) infinite alternate,
+               cursor 0.6s step-end infinite;
+  }
+
+  #card4{
+     
+
+    color: #c084fc;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  
+    animation: neon 2s ease-in-out infinite alternate;
+  
+    
+  }
+  
+  
+/* Animações - @Keyframes */
+@keyframes andarLado{
+    /* Ponto Inicial */
+    0%{
+         translate: 0px;
+
+    }
+
+    /* Ponto Final */
+    100%{
+         translate: 300px;
+
+    }
+}
+
+@keyframes pulsar{
+    /* Ponto Inicial */
+    0%{
+       scale: 0.2;
+
+    }
+
+    /* Ponto Final */
+    100%{
+       scale: 2;
+
+    }
+
+}
+
+@keyframes girar{
+    0%{
+        rotate: 0deg;
+ 
+     }
+ 
+     50%{
+       rotate:90deg;
+
+     }
+
+     100%{
+        rotate: 180deg;
+
+     }
+
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@keyframes digitar {
+    from { width: 0; }
+    to { width: 23ch; }
+  }
+  
+@keyframes cursor {
+    50% { border-color: transparent; }
+  }
+
+  
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+     
+    }
+  
+    to {
+      opacity: 1;
+     
+    }
+  }
+    
+  @keyframes neon {
+    from {
+      text-shadow:
+        0 0 5px #32164d,
+        0 0 10px #a855f7;
+    }
+  
+    to {
+      text-shadow:
+        0 0 10px #a855f7,
+        0 0 20px #a855f7,
+        0 0 40px #7e22ce;
+    }
+  }
